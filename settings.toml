@@ -1,0 +1,13 @@
+[default]
+SQLALCHEMY_TRACK_MODIFICATIONS = false
+FLASK_ENV = "@jinja {{ env.FLASK_ENV }}"
+
+[development]
+FLASK_DEBUG = true
+SQLALCHEMY_DATABASE_URI = "@jinja {{ env.DATABASE_DEV_URI }}"
+
+[production]
+SQLALCHEMY_DATABASE_URI = "@jinja {{ env.DATABASE_PROD_URI }}"
+
+[testing]
+SQLALCHEMY_DATABASE_URI = "@jinja {{ env.DATABASE_TESTING_URI }}"
